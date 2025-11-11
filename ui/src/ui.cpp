@@ -35,6 +35,10 @@ void ui_event_PowerCancelButton(lv_event_t * e);
 lv_obj_t * ui_PowerCancelButton;
 lv_obj_t * ui_PowerCancelLabel;
 lv_obj_t * ui_PowerAskLabel;
+lv_obj_t * ui_TimePanel;
+lv_obj_t * ui_Time1Label;
+lv_obj_t * ui_Time2Label;
+lv_obj_t * ui_UbuntuImage;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_OpenCV

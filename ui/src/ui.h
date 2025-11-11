@@ -51,6 +51,10 @@ void ui_event_PowerCancelButton(lv_event_t * e);
 extern lv_obj_t * ui_PowerCancelButton;
 extern lv_obj_t * ui_PowerCancelLabel;
 extern lv_obj_t * ui_PowerAskLabel;
+extern lv_obj_t * ui_TimePanel;
+extern lv_obj_t * ui_Time1Label;
+extern lv_obj_t * ui_Time2Label;
+extern lv_obj_t * ui_UbuntuImage;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_OpenCV
@@ -104,6 +108,7 @@ LV_IMG_DECLARE(ui_img_message_realease_png);    // assets/Message_Realease.png
 LV_IMG_DECLARE(ui_img_message_press_png);    // assets/Message_Press.png
 LV_IMG_DECLARE(ui_img_power_release_png);    // assets/Power_Release.png
 LV_IMG_DECLARE(ui_img_power_press_png);    // assets/Power_Press.png
+LV_IMG_DECLARE(ui_img_ubuntu_logo_png);    // assets/Ubuntu_Logo.png
 LV_IMG_DECLARE(ui_img_back_realease__png);    // assets/Back_Realease .png
 LV_IMG_DECLARE(ui_img_back_press_png);    // assets/Back_Press.png
 
