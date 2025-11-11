@@ -283,6 +283,9 @@ void ui_init(void)
     ui_Message_screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
     lv_disp_load_scr(ui_Main);
+
+    // Create Date thread
+    date_create_thread();
 }
 
 

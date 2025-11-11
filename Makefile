@@ -26,6 +26,7 @@ include $(LVGL_DIR)/devices/opencv/cv.mk
 include $(LVGL_DIR)/devices/wifi/wifi.mk
 include $(LVGL_DIR)/devices/tm7711/tm7711.mk
 include $(LVGL_DIR)/devices/power/power.mk
+include $(LVGL_DIR)/devices/date/date.mk
 
 #CSRCS +=$(LVGL_DIR)/mouse_cursor_icon.c 
 

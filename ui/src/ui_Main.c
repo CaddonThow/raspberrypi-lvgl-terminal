@@ -80,6 +80,47 @@ void ui_Main_screen_init(void)
     lv_obj_set_style_text_color(ui_PowerLabel, lv_color_hex(0xDE1C00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_PowerLabel, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_TimePanel = lv_obj_create(ui_Main);
+    lv_obj_set_width(ui_TimePanel, 290);
+    lv_obj_set_height(ui_TimePanel, 80);
+    lv_obj_set_x(ui_TimePanel, 0);
+    lv_obj_set_y(ui_TimePanel, 30);
+    lv_obj_set_align(ui_TimePanel, LV_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_TimePanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_TimePanel, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_TimePanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui_TimePanel, lv_color_hex(0xE65920), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_TimePanel, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Time1Label = lv_label_create(ui_TimePanel);
+    lv_obj_set_width(ui_Time1Label, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Time1Label, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Time1Label, 0);
+    lv_obj_set_y(ui_Time1Label, -15);
+    lv_label_set_text(ui_Time1Label, "23:59:59");
+    lv_obj_set_style_text_color(ui_Time1Label, lv_color_hex(0xE65920), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_Time1Label, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_Time1Label, &lv_font_montserrat_48, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Time2Label = lv_label_create(ui_TimePanel);
+    lv_obj_set_width(ui_Time2Label, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Time2Label, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Time2Label, 0);
+    lv_obj_set_y(ui_Time2Label, 13);
+    lv_obj_set_align(ui_Time2Label, LV_ALIGN_BOTTOM_LEFT);
+    lv_label_set_text(ui_Time2Label, "2025-11-11 Tus.");
+    lv_obj_set_style_text_color(ui_Time2Label, lv_color_hex(0xE65920), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_Time2Label, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_Time2Label, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_UbuntuImage = lv_img_create(ui_TimePanel);
+    lv_img_set_src(ui_UbuntuImage, &ui_img_ubuntu_logo_png);
+    lv_obj_set_width(ui_UbuntuImage, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_UbuntuImage, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_UbuntuImage, LV_ALIGN_RIGHT_MID);
+    lv_obj_add_flag(ui_UbuntuImage, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    lv_obj_clear_flag(ui_UbuntuImage, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
     ui_PowerPanel = lv_obj_create(ui_Main);
     lv_obj_set_width(ui_PowerPanel, 220);
     lv_obj_set_height(ui_PowerPanel, 90);
@@ -145,47 +186,6 @@ void ui_Main_screen_init(void)
     lv_label_set_text(ui_PowerAskLabel, "Do you want to shutdown or reboot?");
     lv_obj_set_style_text_color(ui_PowerAskLabel, lv_color_hex(0xFF2852), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_PowerAskLabel, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_TimePanel = lv_obj_create(ui_Main);
-    lv_obj_set_width(ui_TimePanel, 290);
-    lv_obj_set_height(ui_TimePanel, 80);
-    lv_obj_set_x(ui_TimePanel, 0);
-    lv_obj_set_y(ui_TimePanel, 30);
-    lv_obj_set_align(ui_TimePanel, LV_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_TimePanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(ui_TimePanel, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_TimePanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_border_color(ui_TimePanel, lv_color_hex(0xE65920), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_border_opa(ui_TimePanel, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_Time1Label = lv_label_create(ui_TimePanel);
-    lv_obj_set_width(ui_Time1Label, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Time1Label, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Time1Label, 0);
-    lv_obj_set_y(ui_Time1Label, -15);
-    lv_label_set_text(ui_Time1Label, "23:59:59");
-    lv_obj_set_style_text_color(ui_Time1Label, lv_color_hex(0xE65920), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_Time1Label, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_Time1Label, &lv_font_montserrat_48, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_Time2Label = lv_label_create(ui_TimePanel);
-    lv_obj_set_width(ui_Time2Label, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Time2Label, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Time2Label, 0);
-    lv_obj_set_y(ui_Time2Label, 13);
-    lv_obj_set_align(ui_Time2Label, LV_ALIGN_BOTTOM_LEFT);
-    lv_label_set_text(ui_Time2Label, "2025-11-11 Tus.");
-    lv_obj_set_style_text_color(ui_Time2Label, lv_color_hex(0xE65920), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_Time2Label, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_Time2Label, &lv_font_montserrat_24, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_UbuntuImage = lv_img_create(ui_TimePanel);
-    lv_img_set_src(ui_UbuntuImage, &ui_img_ubuntu_logo_png);
-    lv_obj_set_width(ui_UbuntuImage, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_UbuntuImage, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_UbuntuImage, LV_ALIGN_RIGHT_MID);
-    lv_obj_add_flag(ui_UbuntuImage, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_UbuntuImage, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
     lv_obj_add_event_cb(ui_ToOpenCVButton, ui_event_ToOpenCVButton, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_ToSetButton, ui_event_ToSetButton, LV_EVENT_ALL, NULL);

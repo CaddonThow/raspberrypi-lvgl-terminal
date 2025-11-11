@@ -8,6 +8,7 @@
 #include "devices/wifi/wifi.h"
 #include "devices/tm7711/tm7711.h"
 #include "devices/power/power.h"
+#include "devices/date/date.h"
 
 void cv_create_thread(void);
 void cv_destroy_thread(void);
@@ -25,5 +26,8 @@ void wifi_get_clear(void);
 void message_create_thread(void);
 void message_destroy_thread(void); 
 void* message_thread(void* arg); 
+
+void date_create_thread(void);
+void* date_thread(void* arg);
 
 #endif // THREAD_H
